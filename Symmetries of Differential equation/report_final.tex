@@ -1,0 +1,490 @@
+\documentclass[A4paper, 22pt]{article}
+\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+
+
+
+\section{Lie Group of Transformation}
+
+\subsection{Group}  A group is a set of elements with a law of composition $\phi$   between elements satisfying following axioms:
+
+1. Closure: if a,b $\in$ G then \phi(a,b)\ \in\ G.
+
+2. Associativity: \phi(a,\phi(b,c))\ = \phi(\phi(a,b),c)\ .
+
+3. Identity: $\exists$  e $\in$   G   s.t. $\phi(a,e)\ = $\phi(e,a)\ = a.
+
+4. Inverse: \exists\ a^{-1} $\in$ G  s.t. $\phi(a,a^{-1})$ = $\phi(a^{-1},a)$ = e.
+
+Example: Set of all integers with $\phi(a,b) = a + b$. Here e = 0 and $a^{-1} = -a.$
+\subsection{Groups of Transformations} Let x = $(x_1, x_2,.. x_n)$ lie in D $\subset$ $R^{n}$, the set of transformations 
+
+ \[      \mathnormal{x^{*} = \textbf{X}(x;\epsilon)}\] \\
+defined for each x in D, depending on parameter $\epsilon$ $\in$ S $\subset$ R with $\phi(\epsilon,\delta)$ defining a law of composition of parameters $\epsilon$ and $\delta$ in S, forms a group of transformation in D if:
+
+1. $\forall \epsilon  \in$ S, the transformations are one one onto D.
+
+2. S with law of composition $\phi$ forms a group.
+
+3. $x^{*} = x$  when $\epsilon$ = e.
+ 
+4. if $x^{*} = \textbf{X}(x;\epsilon)$, then x^{**} = \textbf{X}(x^{*};\delta) = \textbf{X}(x,\phi(\epsilon,\delta))
+
+\subsection{One parameter Lie Groups of Transformations}
+A group of transformations defines a lie group of transformations if in addition to above 4 axioms:"
+
+5. $\phi$ is a continuous parameter i.e. S is an interval in R.
+
+6. $\textbf{X}$ is infinitely differential in D w.r.t x and an analytic function of \epsilon. 
+
+7. $\phi(\epsilon,\delta)$ is analytic function of $\epsilon$ and $\delta$.\\
+
+Examples:
+a. A group of translations in the plane.
+\[
+\mathnormal{x^{*} = x + \epsilon}\]
+\[
+\mathnormal{y^{*} = y}\]
+
+Here $\epsilon \in R$ and $\phi(a,b) = a + b$. This group corresponds to motions parallel to the x-axis.
+
+b. A group of Scalings in the plane.
+
+\[
+\mathnormal{x^{*} = (1 + \epsilon)x}\]
+\[
+\mathnormal{y^{*} = (1 + \epsilon)^{2}y}\]
+
+Here $\phi(a,b) = a + b + ab$.
+
+
+\subsection{Infinitesimal Transformations}
+
+The transformation x + $\epsilon \xi(x)$ is called the infinitesimal transformation of the lie group of transformation $x^{*} = \textbf{X}(x;\epsilon)$ where $\xi(x)$ is defined as 
+\[
+ \mathnormal{\xi(x) = \frac{\partial \textbf{X}(x;\epsilon)}{\partial \epsilon}|_{\epsilon=0} }   
+\]
+
+\subsection{First Fundamental Theorem}
+
+There exists a parametrization $\tau(\epsilon)$ such that the lie group of transformations $x^{*} = \textbf{X}(x;\epsilon)$ is equivalent to the solution of the IVP for the system of first order differential equations 
+
+\[
+ \mathnormal{\frac{d\textbf{X}(x;\epsilon)}{d\tau} =  \xi(x^{*})}   
+\]
+
+with $x^{*}$ = x when $\tau$ = 0.
+
+In particular 
+\[
+\mathnormal{\tau(\epsilon) = \int_{0}^{\epsilon} \Gamma(\epsilon') d\epsilon'}
+\]
+and 
+
+\[
+  \mathnormal{\Gamma(\epsilon) = \frac{\partial \phi(a,b)}{\partial b}|_{(a,b) = \epsilon, \epsilon^{-1}}}
+\]
+
+with $\Gamma(0) = 1$.
+
+
+\subsection{Infinitesimal Generator}
+The infinitesimal generator of the one parameter Lie group of transformation $x^{*} = \textbf{X}(x;\epsilon)$ is the operator 
+\[
+\mathnormal{ \textit{X} = \textit{X}(x) = \xi(x) \nabla = \sum_{i=1}^{n} \xi_i(x)\frac{\partial }{\partial x_i}}
+\]
+ where $\nabla$ is a gradient operator.
+ 
+The one parameter lie group of transformation $x^{*} = X(x;\epsilon)$ is equivalent to 
+\[
+\mathnormal{x^{*} = e^{\epsilon\textit{X}}x}
+\]
+If F(x) is an infinitely differentiable function, then for a lie group of transformation $x^{*} = \textbf{X}(x;\epsilon)$ with infinitesimal generator \textit{X}, we have 
+\[
+\mathnormal{F(x^{*}) = F(e^{\epsilon\textit{X}}x) = e^{\epsilon\textit{X}}F(x) }
+\]
+
+An infinitely differentiable function F(x) is invariant under lie group of transformation $x^{*} = \textbf{X}(x;\epsilon)$ if and only if for any group transformation,  
+\[
+\mathnormal{F(x^{*}) = F(x). }
+\]
+
+F(x) is invariant under $x^{*} = \textbf{X}(x;\epsilon)$ if and only if
+\[
+\mathnormal{ \textit{X}F(x) = 0}
+\]
+
+\subsection{Canonical Coordinates}
+A change of Coordinates y = $\textbf{Y}(x) = (y_1(x), y_2(x)..,y_n(x))$ defines a set of canonical coordinates for the one parameter lie group of transformation $x^{*} = \textbf{X}(x;\epsilon)$, if in terms of such coordinates, the lie group becomes
+\[\mathnormal{y_i^{*} = y_i }\]   for i = 1,2,..,n-1 
+and
+\[\mathnormal{y_n^{*} = y_n + \epsilon}\]
+
+The infinitesimal with respect to y = $\textbf{Y}(x) = (y_1(x), y_2(x)..,y_n(x))$  is 
+\[\mathnormal{\eta(y) = (\eta_1(y), \eta_2(y),..\eta_n(y)) = Yy }\]\\
+Also, 
+
+\[\mathnormal{\eta(y) = Xy}\]
+In terms of any set of canonical coordinates y = $(y_1(x), y_2(x)..,y_n(x))$, the infinitesimal generator with respect to one parameter lie group of transformation is
+\[\mathnormal{Y = \frac{\partial }{\partial y_n}}\]
+
+
+Example: Group of Rotations
+\[
+\mathnormal{x^{*} = xcos(\epsilon) - ysin(\epsilon)}\]
+\[
+\mathnormal{y^{*} = xsin(\epsilon) + y cos(\epsilon)}\]
+
+The infinitesimal generator is given by 
+\[
+\mathnormal{X = x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}}\]
+
+Let (r,s) be the canonical coordinates such that
+\[
+\mathnormal{r^{*} = r}\]
+\[
+\mathnormal{s^{*} = s + \epsilon}\]
+
+Then solving Xr = 0 and Xs = 1 gives:
+
+\[
+\mathnormal{r = \sqrt{x^{2} + y^{2} }}\]
+\[
+\mathnormal{s = \theta = sin^{-1}(\frac{y}{x})}\]
+
+\subsection{Invariant Surfaces, Curves and Points}
+A surface F(x) =0 is an invariant surface for a one parameter lie group of transformations $x^{*} = \textbf{X}(x;\epsilon)$ if and only if F($x^{*}$) = 0 when F(x) = 0 i.e. XF(x) = 0 when F(x) = 0.\\
+
+A curve F(x,y) = 0 is an invariant surface for a one parameter lie group of transformations
+\[\mathnormal{x^{*} = \textbf{X}(x,y;\epsilon) = x + \epsilon \xi(x,y) + O(\epsilon^{2})}\]
+\[
+\mathnormal{y^{*} = \textbf{Y}(x,y;\epsilon) = x + \epsilon \eta(x,y) + O(\epsilon^{2})}\]
+
+with infinitesimal generator
+\[\mathnormal{X = \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y}}\]\\
+
+if and only if F($x^{*},y^{*}) = 0$ when F(x,y) = 0.\\
+
+A point x is an invariant point for the lie group of transformations $x^{*} = \textbf{X}(x;\epsilon)$ is and only if $x^{*}=x$ under  $x^{*} = \textbf{X}(x;\epsilon)$ i.e. $\xi(x) = 0.$
+\newpage
+\subsection{Extended Transformations}
+\begin{justify}
+1. One independent and one dependent variable:
+The one parameter lie group of transformations: 
+\[\mathnormal{x^{*} = \textbf{X}(x,y;\epsilon) = x + \epsilon \xi(x,y) + O(\epsilon^{2}) }\]
+
+\[\mathnormal{y^{*} = \textbf{Y}(x,y;\epsilon) = y + \epsilon \eta(x,y) + O(\epsilon^{2})}\]
+\newline
+\begin{justify}
+acting on (x,y) space has its infinitesimal
+\end{justify}
+with corresponding infinitesimal generator
+\[
+\mathnormal{X = \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y}}\]
+\newline
+\justify Its corresponding kth extension is given by  
+\[\mathnormal{$x^{*} = \textbf{X}(x,y;\epsilon) = x + \epsilon \xi(x,y) + O(\epsilon^{2}) $}\]
+\[\mathnormal{$y^{*} = \textbf{Y}(x,y;\epsilon) = y + \epsilon \eta(x,y) + O(\epsilon^{2})$}\]
+\[\mathnormal{$y_1^{*} = \textbf{Y_1}(x,y,y_1;\epsilon) = y_1 + \epsilon \eta^{(1)}(x,y,y_1) + O(\epsilon^{2})$}\]
+
+\[\mathnormal{$y_n^{*} = \textbf{Y_n}(x,y,y_1,..y_n;\epsilon) = y_n + \epsilon \eta^{(n)}(x,y,y_1,y_2,..y_n) + O(\epsilon^{2})$}\]\\
+
+\newline
+\justify {with its kth extended infinitesimal generator}
+
+\[\mathnormal{$X^{(k)} = \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y} + \eta^{(1)}(x,y,y_1)\frac{\partial }{\partial y_1} + .. \eta^{(k)}(x,y,y_1,..y_k)\frac{\partial }{\partial y_k}. $}
+
+The total derivative operator D is defined by
+\[
+\mathnormal{\frac{D}{Dx} = \frac{\partial }{\partial x} + y_1\frac{\partial }{\partial y} + y_2\frac{\partial }{\partial y_1} + .. y_n+1\frac{\partial }{\partial y_n}}\]\\
+
+Explicit formula for $\eta^{(k)}$ results from the following
+
+\[
+\mathnormal{\eta^{(k)}(x,y,y_1,y_2,..,y_k) = \frac{D\eta^{(k-1)}}{Dx} - y_k\frac{D\xi(x,u)}{Dx}}\]\\
+
+where $\eta^{(0)}$ = $\eta(x,y)$.
+\end{justify}
+
+
+2. One dependent and n independent variable:\\
+
+The one parameter lie group of transformations
+\[\mathnormal{$x_i^{*} = \textbf{X_i}(x,u;\epsilon) = x_i + \epsilon \xi_i(x,u) + O(\epsilon^{2})$ }\]
+
+\[
+\mathnormal{$u^{*} = \textbf{U}(x,u;\epsilon) = u + \epsilon \eta(x,u) + O(\epsilon^{2})$}\]\\
+i = 1,2,..n, acting on (x,u) space has its infinitesimal generator
+
+\[\mathnormal{X = \xi_i(x,u)\frac{\partial }{\partial x_i} + \eta(x,u)\frac{\partial }{\partial u}.}\]\\
+
+Its corresponding kth extension is given by  
+\[\mathnormal{$x_i^{*} = \textbf{X_i}(x,u;\epsilon) = x_i + \epsilon \xi_i(x,u) + O(\epsilon^{2})$ }\]
+
+\[\mathnormal{$u^{*} = \textbf{U}(x,u;\epsilon) = u + \epsilon \eta(x,u) + O(\epsilon^{2})$}\]
+
+\[\mathnormal{$u_i^{*} = \textbf{U_i}(x,u,u_1;\epsilon) = u_i + \epsilon \eta_i^{(1)}(x,u,u_1) + O(\epsilon^{2})$ }\]
+
+\[\mathnormal{$u_{i_1 i_2..i_n}^{*} = \textbf{U}_{i_1 i_2..i_n}(x,u,u_1,..u_n;\epsilon) = u_{i_1 i_2..i_n} + \epsilon \eta_{i_1 i_2..i_n}^{(n)}(x,u,u_1,u_2,..u_n) + O(\epsilon^{2})$   for i= 2,3,..n}\]\\
+
+
+with its kth extended infinitesimal generator
+\[\mathnormal{X^{(k)} = \xi_i(x,u)\frac{\partial }{\partial x_i} + \eta(x,u)\frac{\partial }{\partial u} + \eta_i^{(1)}(x,u,u_1)\frac{\partial }{\partial u_i} + .. \eta_{i_1i_2i_3..i_k}^{(k)}\frac{\partial }{\partial u_{i_1i_2i_3..i_k}}. }\\
+
+We introduce the total derivative operator $D_i$ as
+\[
+\mathnormal{D_i = \frac{\partial }{\partial x_i} + u_i\frac{\partial }{\partial u} + u_{ij}\frac{\partial }{\partial u_j} + .. u_{i i_1 i_2 ..i_n}\frac{\partial }{\partial u_{i_1 i_2 ..i_n}}}\]\\
+
+Explicit formula for ${\eta^{(k)}}$ results from the following
+
+\[
+\mathnormal{\eta_i^{(1)} = D_i\eta - (D_i\xi_j)u_j }\] \tab i = 1,2,..n. 
+
+and 
+\[\mathnormal{\eta_{i_1i_2i_3..i_k}^{(k)} = D_{i_k}\eta_{i_1i_2i_3..i_{k-1}}^{(k-1)} - (D_{i_k}\xi_j)u_{i_1i_2i_3..i_{k-1}j}}.\]\\
+
+\clearpage
+\section{Ordinary Differential Equations}
+
+\subsection{Invariance of an ODE}
+
+An nth order ODE can be written in solved form as 
+\[
+\mathnormal{y_n = f(x,y,y_1,y_2..,y_n)}\]\\
+where 
+\[\mathnormal{y_k = \frac{d^{k}y}{dx^{k}}}\]\\
+   for k = 1,2,..n.
+   
+   The given ODE defines a surface in $(x,y,y_1,y_2..,y_n)$ space.\\
+   
+   The one parameter lie group of transformations
+   \[\mathnormal{x^{*} = \textbf{X}(x,y;\epsilon) = x + \epsilon \xi(x,y) + O(\epsilon^{2}) }\]
+   \[
+\mathnormal{y^{*} = \textbf{Y}(x,y;\epsilon) = y + \epsilon \eta(x,y) + O(\epsilon^{2})}\]
+
+   leaves the ode invariant if and only if its nth extension leaves the ode invariant. 
+   
+   Let
+   \[\mathnormal{X = \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y}.}\]\\
+   be the infinitesimal generator for the above lie group of transformation and 
+\[\mathnormal{X^{(k)} = \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y} + \eta^{(1)}(x,y,y_1)\frac{\partial }{\partial y_1} + .. \eta^{(k)}(x,y,y_1,..y_k)\frac{\partial }{\partial y_k}. }\]
+
+be the nth extended infinitesimal generator. Then the lie group of transformation is admitted by the ode if and only if 
+\[
+\mathnormal{X^{n}(y_n - f(x,y,y_1,y_2,..,y_{n-1})) = 0}\]\\
+when $y_n = f(x,y,y_1,y_2,..,y_{n-1})$. More generally, an ode 
+$F(x,y,y_1,y_2,..,y_n)$ admits the lie group if 
+\[\mathnormal{X^{(n)}F(x,y,y_1,y_2,..,y_n) = 0}\]\\
+when $F(x,y,y_1,y_2,..,y_n) = 0$.
+
+\subsection{First Order ODE's}
+\[\mathnormal{y' = f(x,y)}\]\\
+
+We assume the ode admits the one parameter lie group of transformations 
+\[\mathnormal{x^{*} = \textbf{X}(x,y;\epsilon) = x + \epsilon \xi(x,y) + O(\epsilon^{2}) }\]
+\[
+\mathnormal{y^{*} = \textbf{Y}(x,y;\epsilon) = y + \epsilon \eta(x,y) + O(\epsilon^{2})}\]
+
+with infinitesimal generator 
+ \[\mathnormal{X = \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y}.}\]\\
+ 
+ There are 2 ways to find the general solution of ODE from the infinitesimals $(\xi(x,y),\eta(x,y))$:\\
+ 
+ 1. Canonical Coordinates:
+ 
+ Given any one parameter lie group of transformations $(x^{*},y^{*})$, there exists canonical coordinates determined by solving 
+ \[ \mathnormal{Xr = 0}\]
+ \[ \mathnormal{Xs = 1}\]\\
+ 
+ such that the lie group $(x^{*},y^{*})$ becomes the translation group 
+  \[ \mathnormal{r^{*} = r}\]
+ \[ \mathnormal{s^{*} = s + \epsilon}\]\\
+ 
+ In terms of the canonical coordinates, the ODE becomes 
+ \[
+ \mathnormal{\frac{ds}{ds} = G(r) = \frac{s_x + s_yf(x,y)}{r_x + r_yf(x,y)}}
+ \]\\
+ 
+ Consequently the general solution of the ODE becomes 
+ \[
+ \mathnormal{s(x,y) = \int^{r(x,y)} G(\rho) d\rho + C}
+ \]
+ 
+ 2. Integrating Factor:
+ 
+ A first order ODE can be written in differential form as
+ \[ \mathnormal{M(x,y)dx + N(x,y)dy = 0}\]\\
+ 
+ where f(x,y) = $\frac{-M(x,y)}{N(x,y)}$.
+ 
+ If $\omega(x,y) = constant$ is the general solution of the ODE then
+ \[\mathnormal{N\frac{\partial \omega}{\partial \x} - M\frac{\partial \omega}{\partial \y} = 0}.\]\\
+ Also
+ \[\mathnormal{X\omega = \xi(x,y)\frac{\partial \omega}{\partial x} + \eta(x,y)\frac{\partial \omega}{\partial y} = 1}\]\\
+ 
+ The above 2 equations can be solved for the first partial derivatives 
+ \[\mathnormal{\frac{\partial \omega}{\partial x} = \frac{M}{M\xi + N\eta}, \frac{\partial \omega}{\partial y} = \frac{N}{M\xi + N\eta}}.\]\\
+ Then $d\omega$ becomes an exact differential and hence
+ 
+ \[\mathnormal{\mu = \frac{1}{M\xi + N\eta}}\]\\
+ is an integrating factor for the given equation in differential form.
+ 
+ Conversely, if $\mu(x,y)$ is an intergrating factor for the ODE written in differential form then any $(\xi(x,y).\eta(x,y))$ satisfying $\mu = \frac{1}{M\xi + N\eta}$ defines an infinitesimal generator $X= \xi(x,y)\frac{\partial }{\partial x} + \eta(x,y)\frac{\partial }{\partial y}$ admitted by the ODE y' = f(x,y).
+ \clearpage
+\section{Partial Differential Equations}
+\subsection{Invariance of a PDE}
+
+We represent a kth order PDE by
+\[\mathnormal{F(x,u,u_1,u_2,..,u_n) = 0}\]
+
+where x = $(x_1,x_2,..,x_n)$ denotes n independent variables, u denotes the coordinates corresponding to dependent variable and $u_j$ denotes the set of coordinates corresponding to all jth order partial derivatives of u with respect to x.\\
+
+The one parameter lie group of transformations 
+\[\mathnormal{x^{*} = \textbf{X}(x,u;\epsilon) }\]
+\[
+\mathnormal{u^{*} = U(x,u;\epsilon)}\]
+
+leaves the PDE invariant if and only if its kth extension defined by
+\[\mathnormal{x_i^{*} = X_i(x,u;\epsilon) = x_i + \epsilon \xi_i(x,u) + O(\epsilon^{2}) }\]
+\[
+\mathnormal{u^{*} = U(x,u;\epsilon) = u + \epsilon \eta(x,u) + O(\epsilon^{2})}\]
+\[
+\mathnormal{u_i^{*} = U_i(x,u,u_1;\epsilon) = u_i + \epsilon \eta_i^{(1)}(x,u,u_1) + O(\epsilon^{2}) }\]
+\[
+\mathnormal{u_{i_1 i_2..i_n}^{*} = U_{i_1 i_2..i_n}(x,u,u_1,..u_n;\epsilon) = u_{i_1 i_2..i_n} + \epsilon \eta_{i_1 i_2..i_n}^{(n)}(x,u,u_1,u_2,..u_n) + O(\epsilon^{2}) 
+
+for i= 2,3,..n}\]\\ 
+
+leaves the surface $F(x,u,u_1,u_2,..,u_n) = 0 $ invariant. Let 
+\[\mathnormal{X = \xi_i(x,u)\frac{\partial }{\partial x_i} + \eta(x,u)\frac{\partial }{\partial u}}\]
+be an infinitesimal generator for given group of transformation. Let\[\mathnormal{X^{(k)} = \xi_i(x,u)\frac{\partial }{\partial x_i} + \eta(x,u)\frac{\partial }{\partial u} + \eta_i^{(1)}(x,u,u_1)\frac{\partial }{\partial u_i} + .. \eta_{i_1i_2i_3..i_k}^{(k)}\frac{\partial }{\partial u_{i_1i_2i_3..i_k}}. }\\
+
+be the kth extended infinitesimal generator. Then the given Lie group is admitted by $F(x,u,u_1,u_2,..,u_n) = 0$ if and only if 
+\[
+\mathnormal{X^{(k)}F(x,u,u_1,u_2,..,u_n) = 0}\]\\
+
+when
+\[
+\mathnormal{F(x,u,u_1,u_2,..,u_n) = 0}\]\\
+
+\subsection{Lie Symmetries of the Shallow Water Equations}
+
+The one dimensional shallow water equations with variable bottom are
+
+\[
+\mathnormal{F^1(t,x,u,c,u_t,u_x,c_t,c_x) = u_t + uu_x+ 2cc_x - b_x = 0}\\
+\]\[
+\mathnormal{F^2(t,x,u,c,u_t,u_x,c_t,c_x) = 2c_t + 2uc_x + cu_x = 0}\\
+\]
+ 
+ where u and c are functions of x and t, and denotes the velocities of the fluid and the disturbance with respect to the fluid, respectively. b is the depth of the water which is a given function of x.\\
+ 
+ Let us assume that the above system is invariant under a one parameter lie group of transformations given by : 
+ 
+ \[\mathnormal{x^{*} = \textbf{X}(x,t,u,c;\epsilon) = x + \epsilon \xi(x,t,u,c) + O(\epsilon^{2}) }\]
+  \[\mathnormal{t^{*} = \textbf{T}(x,t,u,c;\epsilon) = t + \epsilon \tau(x,t,u,c) + O(\epsilon^{2}) }\]
+   \[\mathnormal{u^{*} = \textbf{U}(x,t,u,c;\epsilon) = u + \epsilon \phi(x,t,u,c) + O(\epsilon^{2}) }\]
+    \[\mathnormal{c^{*} = \textbf{C}(x,t,u,c;\epsilon) = c + \epsilon \psi(x,t,u,c) + O(\epsilon^{2}) }\]\\
+
+Then the infinitesimal generator for the given group is given by 
+\[
+\mathnormal{X = \xi(x,t,u,c)\frac{\partial }{\partial x} + \tau(x,t,u,c)\frac{\partial }{\partial t} + \phi(x,t,u,c)\frac{\partial }{\partial u} + \psi(x,t,u,c)\frac{\partial }{\partial c}}\]\\
+
+
+Its first extended infinitesimal generator is given by 
+\[
+\mathnormal{X^{(1)} = \xi(x,t,u,c)\frac{\partial }{\partial x} + \tau(x,t,u,c)\frac{\partial }{\partial t} + \phi(x,t,u,c)\frac{\partial }{\partial u} + \psi(x,t,u,c)\frac{\partial }{\partial c} + }\\
+
+\mathnormal{\phi^t(x,t,u,c)\frac{\partial }{\partial u_t} + \phi^x(x,t,u,c)\frac{\partial }{\partial u_x} + \psi^t(x,t,u,c)\frac{\partial }{\partial c_t} + \psi^x(x,t,u,c)\frac{\partial }{\partial c_x}}\]\\
+
+where the extended infinitesimals are determined by the formula
+\[
+\mathnormal{\eta_i^{(1)} = D_i\eta - (D_i\xi_j)u_j }\]\\
+So, 
+\[
+\mathnormal{D_t = \frac{\partial}{\partial t} + u_t\frac{\partial}{\partial u} + c_t\frac{\partial}{\partial c}}\]
+\[
+\mathnormal{D_x = \frac{\partial}{\partial x} + u_x\frac{\partial}{\partial u} + c_x\frac{\partial}{\partial c}}\]
+Using the explicit formula for $\phi^{(1)}$ and $\psi^{(1)}$ we get, 
+
+\[
+\mathnormal{\phi^{t} = D_t\phi - (D_t\xi)u_x - (D_t\tau)u_t }\]
+\[
+\mathnormal{\phi^{x} = D_x\phi - (D_x\xi)u_x - (D_x\tau)u_t }\]
+\[
+\mathnormal{\psi^{t} = D_t\psi - (D_t\xi)c_x - (D_t\tau)c_t }\]
+\[
+\mathnormal{\psi^{x} = D_x\psi - (D_x\xi)c_x - (D_x\tau)c_t }\]
+Substituting the values of $D_t$ and $D_x$ in above equation, we get
+
+\[
+\mathnormal{\phi^t = \phi_t + u_t\phi_u + c_t\phi_c - u_x(\xi_t + u_t\xi_u + c_t\xi_c) - u_t(\tau_t + u_t\tau_u + c_t\tau_c)}\]
+\[
+\mathnormal{\phi^x = \phi_x + u_x\phi_u + c_x\phi_c - u_x(\xi_x + u_x\xi_u + c_x\xi_c) - u_t(\tau_x + u_x\tau_u + c_x\tau_c)}\]
+\[
+\mathnormal{\psi^t = \psi_t + u_t\psi_u + c_t\psi_c - c_x(\xi_t + u_t\xi_u + c_t\xi_c) - c_t(\tau_t + u_t\tau_u + c_t\tau_c)}\]
+\[
+\mathnormal{\psi^x = \psi_x + u_x\psi_u + c_x\psi_c - c_x(\xi_x + u_x\xi_u + c_x\xi_c) - c_t(\tau_x + u_x\tau_u + c_x\tau_c)}\]
+
+Now, applying the infinitesimal criterion for the invariance of the PDEs to determine $\tau, \xi, \phi, \psi$, we get,
+\[
+\mathnormal{X^{(1)}F^{(1)} = 0}\] \tab when $F^{(1)}$ = 0 and \\
+
+\[\mathnormal{X^{(1)}F^{(2)} = 0}\] \tab when F^{(2)} = 0.\\
+
+Substituting the values of $F^{(1)}$ and $F^{(2)}$ in above equations, we get
+\[
+\mathnormal{\phi^t + u\phi_x + u_x\phi + 2c\psi^x + 2c_x\psi - \xi b_{xx} = 0}\]
+\[
+\mathnormal{2\psi^t + 2u\psi^x + 2c_x\phi + c\phi^x + u_x\psi = 0}\]\\
+
+Substituting values of the extended infinitesimals and using $u_t = -uu_x -2cc_x + b_x$ and $c_t = -uc_x - \frac{cu_x}{2}$ wherever they appear in above equations and equating different powers of derivatives of u and c to zero, we get the following equations:
+
+1. Equating terms which do not contain any derivatives of u and c:
+\[
+\mathnormal{\phi_t + u\phi_x + 2c\psi_x + b_x\phi_u - b_x\tau_t - ub_x\tau_x - b^2_x\tau_u - b_{xx}\xi = 0.}\]
+\[
+\mathnormal{2\psi_t + 2u\psi_x + c\phi_x + 2b_x\psi_u - cb_x\tau_x = 0}\]
+
+2. Equating coefficient of $u_x$ to 0:
+
+\[
+\mathnormal{2\phi - c\phi_c + 4c\psi_u + 2u\tau_t + 2(c^2 + u^2)\tau_x + 2ub_x\tau_u + cb_x\tau_c - 2\xi_t - 2u\xi_x - 2b_x\xi_u = 0}\]
+
+\[
+\mathnormal{\psi + c\phi_u - c\psi_c + c\tau_t + 2uc\tau_x - c\xi_x = 0}\]
+
+3. Equating coefficient of $c_x$ to 0:
+
+\[
+\mathnormal{\psi - c\phi_u + c\psi_c + c\tau_t + 2uc\tau_x + 2cb_x\tau_u - c\xi_x = 0}\]
+
+\[
+\mathnormal{2\phi + c\phi_c - 4c\psi_u + 2u\tau_t + 2(c^2 + u^2)\tau_x + 2ub_x\tau_u - cb_x\tau_c - 2\xi_t - 2u\xi_x - 2b_x\xi_u = 0}\]
+
+4. Equating coefficient of $u^2_x$ (same as coefficient of $c^2_x$) to 0:
+
+\[
+\mathnormal{2c\tau_u - u\tau_c + \xi_c = 0}\]
+
+\[
+\mathnormal{2u\tau_u - c\tau_c - 2\xi_u = 0}\]
+
+The above system of overdetermined equations needs to be solved to obtain the equations for the infinitesimals using which we can find the lie group of transformations that admits the shallow water equations.
+
+
+\clearpage
+\section{Conclusion}
+
+Lie groups of transformations basic symmetry methods can be used can be used for solving ordinary and partial differential equations. The Lie group of symmetries can be found from using the invariance of these symmetries under the given system of ODE's or PDE's. Then the solution of the differential equations can be determined resulting from these symmetries.
+\clearpage
+\section{Bibliography}
+
+1. Symmetries and Differential Equations by G. Bluman, S. Kumei.
+\\
+2. Manoj Pandey,  Lie Symmetries and Exact Solutions of Shallow Water Equations with Variable Bottom, International Journal of Nonlinear Sciences and Numerical Simulation (IJNSNS), 16, (2015), 337-342
+
+\end{document}
+
